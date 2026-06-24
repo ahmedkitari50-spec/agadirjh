@@ -1,0 +1,1653 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nour To Sunset — Wedding & Event Planner | Agadir</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* --- VARIABLES DE CONCEPTION --- */
+:root {
+  --nour-daylight: #FFF9F2; /* Crème doux représentant la lumière "Nour" */
+  --sunset-peach: #FCEADE;   /* Pêche douce du début du coucher de soleil */
+  --sunset-orange: #E76F51;  /* Orange chaleureux */
+  --twilight-pink: #DDA15E;  /* Rose poudré crépusculaire */
+  --twilight-blue: #111D33;  /* Bleu nuit profond */
+  --gold: #C9893A;           /* Or signature */
+  --gold-light: #E8AC5A;     /* Or lumineux */
+  --white: #FFFFFF;
+  --text-dark: #1E2530;
+  --text-muted: #64748B;
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- REINITIALISATION --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Raleway', sans-serif;
+  color: var(--text-dark);
+  background-color: var(--nour-daylight);
+  overflow-x: hidden;
+}
+
+body {
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  color: var(--twilight-blue);
+}
+
+/* --- EFFETS DE REVELATION AU DEFILEMENT --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: var(--transition-smooth);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- EN-TETE / NAVIGATION --- */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(255, 249, 242, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(201, 137, 58, 0.1);
+  transition: var(--transition-smooth);
+}
+
+header.scrolled {
+  background: rgba(17, 29, 51, 0.95);
+  border-bottom: 1px solid rgba(232, 172, 90, 0.2);
+}
+
+header.scrolled .nav-link,
+header.scrolled .logo-text {
+  color: var(--white);
+}
+
+header.scrolled .nav-link::after {
+  background-color: var(--gold-light);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 2rem;
+}
+
+.logo-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--twilight-blue);
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: var(--transition-smooth);
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--twilight-blue);
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding: 0.3rem 0;
+  transition: var(--transition-smooth);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--gold);
+  transition: var(--transition-smooth);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Menu Burger pour Mobile */
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.burger-bar {
+  width: 100%;
+  height: 3px;
+  background-color: var(--twilight-blue);
+  border-radius: 2px;
+  transition: var(--transition-smooth);
+}
+
+header.scrolled .burger-bar {
+  background-color: var(--white);
+}
+
+/* --- HERO SECTION (Atmosphère Nour to Sunset) --- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8rem 2rem 4rem;
+  background: linear-gradient(135deg, var(--nour-daylight) 0%, var(--sunset-peach) 50%, var(--twilight-pink) 100%);
+  overflow: hidden;
+}
+
+/* Décoration d'ambiance coucher de soleil */
+.sun-glow {
+  position: absolute;
+  bottom: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60vw;
+  height: 60vw;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(232,172,90,0.4) 0%, rgba(231,111,81,0.1) 60%, rgba(255,255,255,0) 100%);
+  filter: blur(60px);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
+
+.hero-tagline {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: var(--gold);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+  color: var(--twilight-blue);
+}
+
+.hero-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1.2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2.2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  transition: var(--transition-smooth);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--twilight-blue);
+  color: var(--white);
+  box-shadow: 0 4px 15px rgba(17, 29, 51, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: var(--gold);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(201, 137, 58, 0.3);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--twilight-blue);
+  border: 2px solid var(--twilight-blue);
+}
+
+.btn-secondary:hover {
+  background-color: rgba(17, 29, 51, 0.05);
+  transform: translateY(-3px);
+}
+
+/* --- SECTION HISTOIRE / CONCEPT --- */
+.section-about {
+  padding: 7rem 2rem;
+  background-color: var(--white);
+  position: relative;
+}
+
+.section-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.grid-two-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.section-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  display: block;
+  font-weight: 600;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  margin-bottom: 1.8rem;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* Décoration d'illustrations géométriques élégantes */
+.about-illustration {
+  position: relative;
+  height: 400px;
+  background: linear-gradient(135deg, var(--sunset-peach), var(--twilight-pink));
+  border-radius: 30px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.about-illustration svg {
+  width: 150px;
+  height: 150px;
+  fill: var(--white);
+  opacity: 0.8;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(5deg); }
+}
+
+/* --- SERVICES INTERACTIFS --- */
+.section-services {
+  padding: 7rem 2rem;
+  background: linear-gradient(180deg, var(--white) 0%, var(--nour-daylight) 100%);
+}
+
+.text-center {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background-color: var(--white);
+  border-radius: 20px;
+  padding: 3rem 2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+  border: 1px solid rgba(201, 137, 58, 0.08);
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold), var(--sunset-orange));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: var(--transition-smooth);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(201, 137, 58, 0.12);
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-icon {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(201, 137, 58, 0.08);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+  color: var(--gold);
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.service-card p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.service-bullets {
+  list-style: none;
+}
+
+.service-bullets li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+.service-bullets li::before {
+  content: '✦';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+}
+
+/* --- GALERIE FILTRABLE & LIGHTBOX --- */
+.section-gallery {
+  padding: 7rem 2rem;
+  background-color: var(--white);
+}
+
+.gallery-filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  background-color: transparent;
+  border: 1px solid rgba(17, 29, 51, 0.15);
+  color: var(--twilight-blue);
+  padding: 0.6rem 1.5rem;
+  border-radius: 30px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.filter-btn.active, .filter-btn:hover {
+  background-color: var(--twilight-blue);
+  color: var(--white);
+  border-color: var(--twilight-blue);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+  transition: var(--transition-smooth);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(17, 29, 51, 0) 40%, rgba(17, 29, 51, 0.85) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: var(--transition-smooth);
+}
+
+.gallery-item:hover {
+  transform: scale(1.02);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-title {
+  color: var(--white);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.gallery-category {
+  color: var(--gold-light);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+/* --- LIGHTBOX INTERACTIVE --- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(11, 19, 43, 0.95);
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.lightbox.open {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 80vh;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 8px;
+  object-fit: contain;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.lightbox-close:hover {
+  color: var(--gold);
+}
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: var(--white);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
+}
+
+.lightbox-nav:hover {
+  background: rgba(255,255,255,0.25);
+  color: var(--gold-light);
+}
+
+.lightbox-prev {
+  left: -70px;
+}
+
+.lightbox-next {
+  right: -70px;
+}
+
+/* --- NOVEAUTÉ : ESTIMATEUR DE BUDGET INTERACTIF --- */
+.section-calculator {
+  padding: 7rem 2rem;
+  background: linear-gradient(135deg, var(--twilight-blue) 0%, #1a2a47 100%);
+  color: var(--white);
+  position: relative;
+}
+
+.section-calculator h2, .section-calculator p {
+  color: var(--white);
+}
+
+.calc-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3rem;
+}
+
+.calc-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.control-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--gold-light);
+}
+
+.calc-select, .calc-range {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 0.8rem;
+  color: var(--white);
+  font-family: inherit;
+  font-size: 1rem;
+  outline: none;
+  transition: var(--transition-smooth);
+}
+
+.calc-select option {
+  background-color: var(--twilight-blue);
+  color: var(--white);
+}
+
+.calc-checkboxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.checkbox-label input {
+  accent-color: var(--gold-light);
+  width: 18px;
+  height: 18px;
+}
+
+.calc-result-box {
+  background: rgba(201, 137, 58, 0.15);
+  border: 1px dashed var(--gold);
+  border-radius: 16px;
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.calc-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  margin: 1rem 0;
+}
+
+.calc-note {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.7);
+  margin-top: 1rem;
+}
+
+/* --- TEMOIGNAGES CAROUSEL --- */
+.section-testimonials {
+  padding: 7rem 2rem;
+  background-color: var(--nour-daylight);
+}
+
+.testimonials-carousel {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  height: 300px;
+}
+
+.testimonial-slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.testimonial-slide.active {
+  opacity: 1;
+}
+
+.testimonial-quote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: clamp(1.2rem, 3vw, 1.6rem);
+  color: var(--twilight-blue);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.testimonial-author {
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: var(--gold);
+}
+
+.testimonial-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(17, 29, 51, 0.15);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.dot.active {
+  background-color: var(--gold);
+  transform: scale(1.3);
+}
+
+/* --- FORMULAIRE DE CONTACT PREMIUM --- */
+.section-contact {
+  padding: 7rem 2rem;
+  background-color: var(--white);
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.info-item {
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+}
+
+.info-icon {
+  width: 45px;
+  height: 45px;
+  background-color: rgba(201, 137, 58, 0.08);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.info-content h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.info-content p, .info-content a {
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.contact-form-container {
+  background-color: var(--nour-daylight);
+  padding: 3rem;
+  border-radius: 24px;
+  border: 1px solid rgba(201, 137, 58, 0.1);
+  position: relative;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-full {
+  grid-column: span 2;
+}
+
+.input-field {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(17, 29, 51, 0.12);
+  background-color: var(--white);
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  transition: var(--transition-smooth);
+}
+
+.input-field:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201, 137, 58, 0.15);
+}
+
+.form-submit {
+  width: 100%;
+  border: none;
+  background-color: var(--twilight-blue);
+  color: var(--white);
+  cursor: pointer;
+}
+
+/* Notification de soumission */
+.form-notification {
+  display: none;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+  text-align: center;
+  font-weight: 500;
+  animation: fadeIn 0.3s ease;
+}
+
+.form-notification.success {
+  display: block;
+  background-color: rgba(46, 125, 50, 0.1);
+  color: #2e7d32;
+  border: 1px solid rgba(46, 125, 50, 0.2);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- BOUTON WHATSAPP FLOTTANT --- */
+.whatsapp-float {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: #25D366;
+  color: var(--white);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.35);
+  z-index: 1000;
+  transition: var(--transition-smooth);
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.whatsapp-float svg {
+  width: 32px;
+  height: 32px;
+  fill: currentColor;
+}
+
+/* --- PIED DE PAGE --- */
+footer {
+  background-color: var(--twilight-blue);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 5rem 2rem 2rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 4rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-brand h3 {
+  color: var(--white);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.footer-links h4 {
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.footer-links a:hover {
+  color: var(--gold-light);
+  padding-left: 5px;
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 2rem auto 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+/* --- MEDIAS QUERIES --- */
+@media (max-width: 968px) {
+  .burger-menu {
+    display: flex;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    height: 100vh;
+    background-color: var(--twilight-blue);
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+    transition: var(--transition-smooth);
+  }
+
+  .nav-menu.open {
+    right: 0;
+  }
+
+  .nav-link {
+    color: var(--white);
+    font-size: 1.3rem;
+  }
+
+  .grid-two-cols {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .calc-container {
+    grid-template-columns: 1fr;
+    padding: 2rem;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .lightbox-prev { left: -40px; }
+  .lightbox-next { right: -40px; }
+}
+
+@media (max-width: 576px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-full {
+    grid-column: span 1;
+  }
+  .calc-checkboxes {
+    grid-template-columns: 1fr;
+  }
+  .lightbox-prev, .lightbox-next {
+    display: none;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- EN-TETE / MENU -->
+<header id="header">
+  <div class="nav-container">
+    <a href="#" class="logo-text">NOUR TO SUNSET</a>
+    <div class="burger-menu" id="burger">
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+      <span class="burger-bar"></span>
+    </div>
+    <ul class="nav-menu" id="nav-menu">
+      <li><a href="#" class="nav-link">Accueil</a></li>
+      <li><a href="#about" class="nav-link">Concept</a></li>
+      <li><a href="#services" class="nav-link">Services</a></li>
+      <li><a href="#gallery" class="nav-link">Galerie</a></li>
+      <li><a href="#calculator" class="nav-link">Estimer</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="sun-glow"></div>
+  <div class="hero-content">
+    <p class="hero-tagline">Créateur d'Événements Sur-Mesure — Agadir</p>
+    <h1 class="hero-title">De la Lumière de l'Aube au Crayon d'Or du Crépuscule</h1>
+    <p class="hero-subtitle">Conception de mariages prestigieux, fêtes vibrantes et événements corporatifs exceptionnels au Maroc.</p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn btn-primary">Réserver un Appel</a>
+      <a href="#calculator" class="btn btn-secondary">Simuler un Budget</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONCEPT SECTION -->
+<section class="section-about" id="about">
+  <div class="section-container">
+    <div class="grid-two-cols">
+      <div class="reveal">
+        <span class="section-label">Notre Essence</span>
+        <h2 class="section-title">L'art de capturer l'éphémère</h2>
+        <p class="about-text">Nour to Sunset est né de la passion d'harmoniser chaque étape de vos événements. "Nour" symbolise cette première étincelle de pureté lors des préparatifs, qui s'épanouit majestueusement pour se transformer en une fête inoubliable au coucher du soleil ("Sunset").</p>
+        <p class="about-text">Basés à Agadir, nous façonnons des moments singuliers qui racontent votre histoire avec raffinement, élégance et une précision sans faille.</p>
+      </div>
+      <div class="about-illustration reveal">
+        <!-- SVG Élégant de Soleil Couchant -->
+        <svg viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M 25,55 C 25,55 35,45 50,55 C 65,65 75,55 75,55" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M 20,65 Q 50,55 80,65" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="50" cy="40" r="12" fill="currentColor"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES SECTION -->
+<section class="section-services" id="services">
+  <div class="text-center">
+    <span class="section-label">Ce que nous faisons</span>
+    <h2 class="section-title">Une Organisation de Prestige de A à Z</h2>
+    <p style="color: var(--text-muted);">Que vous souhaitiez une cérémonie intime sur la côte ou une grande réception impériale, nous donnons vie à vos désirs.</p>
+  </div>
+  
+  <div class="services-grid">
+    <!-- Service 1 -->
+    <div class="service-card reveal">
+      <div class="service-icon">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </svg>
+      </div>
+      <h3>Mariages de Rêve</h3>
+      <p>La planification complète de votre union sacrée, mêlant tradition marocaine et modernité créative.</p>
+      <ul class="service-bullets">
+        <li>Recherche du lieu & coordination des prestataires</li>
+        <li>Design de l'ambiance florale et lumineuse</li>
+        <li>Supervision du jour J de l'aube au crépuscule</li>
+      </ul>
+    </div>
+
+    <!-- Service 2 -->
+    <div class="service-card reveal">
+      <div class="service-icon">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+        </svg>
+      </div>
+      <h3>Fêtes Privées</h3>
+      <p>Des anniversaires magiques, fiançailles ou événements à thèmes qui marqueront vos proches.</p>
+      <ul class="service-bullets">
+        <li>Scénographie immersive exclusive</li>
+        <li>Animations sonores et DJ professionnels</li>
+        <li>Bars à cocktails créatifs & traiteurs réputés</li>
+      </ul>
+    </div>
+
+    <!-- Service 3 -->
+    <div class="service-card reveal">
+      <div class="service-icon">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+          <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+        </svg>
+      </div>
+      <h3>Événements Corporatifs</h3>
+      <p>Dîners de gala, lancements de marques ou séminaires clés en main à l'image de votre entreprise.</p>
+      <ul class="service-bullets">
+        <li>Technique audiovisuelle haut de gamme</li>
+        <li>Hôtesses d'accueil et gestion logistique</li>
+        <li>Animations interactives et captations vidéo</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- GALERIE SECTION -->
+<section class="section-gallery" id="gallery">
+  <div class="text-center">
+    <span class="section-label">Portfolio</span>
+    <h2 class="section-title">Nos Récents Moments d'Exception</h2>
+  </div>
+
+  <div class="gallery-filters">
+    <button class="filter-btn active" data-filter="all">Tous</button>
+    <button class="filter-btn" data-filter="wedding">Mariages</button>
+    <button class="filter-btn" data-filter="private">Privé</button>
+    <button class="filter-btn" data-filter="corporate">Corporate</button>
+  </div>
+
+  <div class="gallery-grid" id="gallery-grid">
+    <!-- Item 1 -->
+    <div class="gallery-item reveal" data-category="wedding">
+      <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=600" alt="Mariage au crépuscule">
+      <div class="gallery-overlay">
+        <span class="gallery-category">Mariage</span>
+        <h3 class="gallery-title">Cérémonie Dorée</h3>
+      </div>
+    </div>
+    <!-- Item 2 -->
+    <div class="gallery-item reveal" data-category="private">
+      <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&q=80&w=600" alt="Animation DJ et lumière">
+      <div class="gallery-overlay">
+        <span class="gallery-category">Privé</span>
+        <h3 class="gallery-title">Nuit Illuminée</h3>
+      </div>
+    </div>
+    <!-- Item 3 -->
+    <div class="gallery-item reveal" data-category="corporate">
+      <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=600" alt="Gala d'entreprise">
+      <div class="gallery-overlay">
+        <span class="gallery-category">Corporate</span>
+        <h3 class="gallery-title">Gala Nour</h3>
+      </div>
+    </div>
+    <!-- Item 4 -->
+    <div class="gallery-item reveal" data-category="wedding">
+      <img src="https://images.unsplash.com/photo-1519225495810-7512c696505a?auto=format&fit=crop&q=80&w=600" alt="Décoration de table florale">
+      <div class="gallery-overlay">
+        <span class="gallery-category">Mariage</span>
+        <h3 class="gallery-title">Fleurs de l'Atlas</h3>
+      </div>
+    </div>
+    <!-- Item 5 -->
+    <div class="gallery-item reveal" data-category="private">
+      <img src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&q=80&w=600" alt="Fête anniversaire">
+      <div class="gallery-overlay">
+        <span class="gallery-category">Privé</span>
+        <h3 class="gallery-title">Sunset Garden Party</h3>
+      </div>
+    </div>
+    <!-- Item 6 -->
+    <div class="gallery-item reveal" data-category="corporate">
+      <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&q=80&w=600" alt="Lancement de produit conférence">
+      <div class="gallery-overlay">
+        <span class="gallery-category">Corporate</span>
+        <h3 class="gallery-title">Lancement Innovant</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOUVEAU : ESTIMATEUR DE BUDGET -->
+<section class="section-calculator" id="calculator">
+  <div class="text-center">
+    <span class="section-label" style="color: var(--gold-light);">Outil Intelligent</span>
+    <h2>Estimez Votre Événement en Quelques Clics</h2>
+    <p>Sélectionnez vos options pour obtenir un budget indicatif en temps réel.</p>
+  </div>
+
+  <div class="calc-container reveal">
+    <div class="calc-controls">
+      <div class="control-group">
+        <label class="control-label">Type d'Événement</label>
+        <select class="calc-select" id="event-type">
+          <option value="mariage">Mariage Prestigieux (Base 2500€)</option>
+          <option value="prive">Fête Privée / Anniversaire (Base 1000€)</option>
+          <option value="corporate">Gala Corporate (Base 3000€)</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label class="control-label" id="guest-label">Nombre d'Invités : 100</label>
+        <input type="range" class="calc-range" id="guest-count" min="20" max="500" step="10" value="100">
+      </div>
+
+      <div class="control-group">
+        <label class="control-label">Options d'Animation & Design</label>
+        <div class="calc-checkboxes">
+          <label class="checkbox-label">
+            <input type="checkbox" id="opt-son" checked> Sonorisation & DJ (+800€)
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" id="opt-light" checked> Éclairage d'Ambiance (+600€)
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" id="opt-deco"> Décoration Florale (+1200€)
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" id="opt-video"> Capture Photo & Vidéo (+1500€)
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="calc-result-box">
+      <h3 style="color: var(--white);">Votre Estimation</h3>
+      <div class="calc-price" id="calc-price">4 900 €</div>
+      <p style="color: rgba(255,255,255,0.8); font-size: 0.95rem;">Ce tarif est une simulation. Intégrer ce calcul à mon formulaire de contact ?</p>
+      <button class="btn btn-primary" style="background-color: var(--gold); border: none; margin-top: 1.5rem;" onclick="applyToContact()">Appliquer au Formulaire</button>
+      <div class="calc-note">*Hors location de salle et traiteur externe. Prix moyen indicatif.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TEMOIGNAGES -->
+<section class="section-testimonials">
+  <div class="text-center">
+    <span class="section-label">Livre d'or</span>
+    <h2>Ils nous ont fait confiance</h2>
+  </div>
+
+  <div class="testimonials-carousel" id="carousel">
+    <div class="testimonial-slide active">
+      <p class="testimonial-quote">"Une organisation d'un professionnalisme rare. De la décoration florale à la coordination du DJ, tout était absolument parfait pour notre mariage à Agadir. Merci à Nour To Sunset."</p>
+      <p class="testimonial-author">— Sofia & Karim (Juillet 2025)</p>
+    </div>
+    <div class="testimonial-slide">
+      <p class="testimonial-quote">"Notre gala d'entreprise a été salué par l'ensemble de nos collaborateurs. Une gestion de la régie lumière et son sans aucun faux-pas. Nous recommandons vivement !"</p>
+      <p class="testimonial-author">— Directeur de Royal Atlas Tech</p>
+    </div>
+    <div class="testimonial-slide">
+      <p class="testimonial-quote">"Nour to Sunset a su transformer mon anniversaire de mariage en un vrai conte de fées sous les étoiles d'Agadir. Créatif, raffiné et toujours à l'écoute."</p>
+      <p class="testimonial-author">— Laila O. (Octobre 2025)</p>
+    </div>
+  </div>
+  <div class="testimonial-dots" id="carousel-dots">
+    <span class="dot active" onclick="setSlide(0)"></span>
+    <span class="dot" onclick="setSlide(1)"></span>
+    <span class="dot" onclick="setSlide(2)"></span>
+  </div>
+</section>
+
+<!-- SECTION CONTACT -->
+<section class="section-contact" id="contact">
+  <div class="contact-layout">
+    <div class="contact-info reveal">
+      <span class="section-label">Contact</span>
+      <h2 class="section-title">Commençons à Planifier Votre Plus Beau Jour</h2>
+      <p style="color: var(--text-muted); margin-bottom: 2rem;">Notre agence est située à Agadir et se déplace dans tout le Royaume du Maroc. Contactez-nous pour un premier appel gratuit de consultation.</p>
+      
+      <div class="info-item">
+        <div class="info-icon">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+          </svg>
+        </div>
+        <div class="info-content">
+          <h4>Téléphone</h4>
+          <p><a href="tel:+212600000000">+212 (0) 6 00 00 00 00</a></p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </div>
+        <div class="info-content">
+          <h4>E-mail</h4>
+          <p><a href="mailto:contact@nourtosunset.com">contact@nourtosunset.com</a></p>
+        </div>
+      </div>
+
+      <div class="info-item">
+        <div class="info-icon">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <div class="info-content">
+          <h4>Adresse Bureau</h4>
+          <p>Marina d'Agadir, Secteur Touristique, Agadir 80000</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-container reveal">
+      <form id="contactForm" onsubmit="event.preventDefault(); handleContactSubmit();">
+        <div class="form-grid">
+          <div>
+            <label style="font-size: 0.85rem; margin-bottom: 0.5rem; display: block;">Votre Nom</label>
+            <input type="text" class="input-field" id="form-name" required placeholder="Ex: Leyla Alaoui">
+          </div>
+          <div>
+            <label style="font-size: 0.85rem; margin-bottom: 0.5rem; display: block;">E-mail</label>
+            <input type="email" class="input-field" id="form-email" required placeholder="Ex: leyla@gmail.com">
+          </div>
+          <div class="form-full">
+            <label style="font-size: 0.85rem; margin-bottom: 0.5rem; display: block;">Date Prévue</label>
+            <input type="date" class="input-field" id="form-date">
+          </div>
+          <div class="form-full">
+            <label style="font-size: 0.85rem; margin-bottom: 0.5rem; display: block;">Description de votre Projet</label>
+            <textarea class="input-field" id="form-message" rows="5" required placeholder="Dites-nous tout (Lieu souhaité, ambiance, budget estimé...)"></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn form-submit" id="submit-btn">Envoyer ma Demande</button>
+        <div class="form-notification" id="form-notif"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX INTERACTIVE -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightbox-close-btn" aria-label="Fermer">&times;</button>
+  <button class="lightbox-nav lightbox-prev" id="lightbox-prev-btn" aria-label="Précédent">&#10094;</button>
+  <div class="lightbox-content">
+    <img id="lightbox-img" class="lightbox-img" src="" alt="Aperçu Galerie">
+  </div>
+  <button class="lightbox-nav lightbox-next" id="lightbox-next-btn" aria-label="Suivant">&#10095;</button>
+</div>
+
+<!-- BOUTON DE CHAT FLOATING WHATSAPP -->
+<a href="https://wa.me/212600000000?text=Bonjour,%20je%20souhaite%20obtenir%20des%20informations%20concernant%20vos%20services%20d'organisation%20d'événements." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Discuter sur WhatsApp">
+  <svg viewBox="0 0 24 24">
+    <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.964 9.964 0 0 0 1.333 4.993L2 22l5.197-1.355a9.957 9.957 0 0 0 4.815 1.23h.005c5.507 0 9.99-4.478 9.99-9.985 0-2.667-1.04-5.174-2.93-7.061A9.914 9.914 0 0 0 12.012 2zm5.783 14.156c-.254.71-1.477 1.385-2.031 1.482-.5.089-1.15.163-3.328-.737-2.784-1.152-4.578-3.99-4.717-4.175-.14-.186-1.141-1.512-1.141-2.884 0-1.372.715-2.046.97-2.316.254-.27.556-.338.74-.338h.531c.17 0 .397-.064.62.474.223.538.763 1.86.827 1.993.064.133.106.288.01.48-.095.19-.143.308-.285.474-.143.165-.3.37-.428.497-.143.14-.294.29-.127.575.167.285.742 1.22 1.597 1.98.1.1.2.1.3.1.1.1.2 0 .3 0 .143-.165.62-.722.787-.968.167-.245.334-.203.564-.118.23.085 1.46.688 1.714.815.254.127.425.19.488.3.063.11.063.633-.19 1.343z"/>
+  </svg>
+</a>
+
+<!-- PIED DE PAGE -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-brand">
+      <h3>NOUR TO SUNSET</h3>
+      <p style="margin-top: 1rem;">Votre partenaire de confiance pour façonner des moments d'élégance inoubliables de l'aurore au crépuscule à Agadir, Maroc.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Plan du Site</h4>
+      <ul>
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#about">Notre Concept</a></li>
+        <li><a href="#services">Nos Services</a></li>
+        <li><a href="#gallery">Notre Galerie</a></li>
+      </ul>
+    </div>
+    <div class="footer-links">
+      <h4>Suivez-nous</h4>
+      <ul>
+        <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://pinterest.com" target="_blank" rel="noopener">Pinterest</a></li>
+        <li><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Nour To Sunset. Tous droits réservés.</p>
+    <p>Conçu à Agadir avec élégance.</p>
+  </div>
+</footer>
+
+<!-- SCRIPTS JS -->
+<script>
+  /* --- GESTION DU DEFILEMENT DE L'EN-TETE --- */
+  const header = document.getElementById('header');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  });
+
+  /* --- MENU DE NAVIGATION MOBILE --- */
+  const burger = document.getElementById('burger');
+  const navMenu = document.getElementById('nav-menu');
+  
+  burger.addEventListener('click', () => {
+    navMenu.classList.toggle('open');
+    burger.classList.toggle('active');
+  });
+
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('open');
+      burger.classList.remove('active');
+    });
+  });
+
+  /* --- EFFETS DE REVELATION AU SCROLL --- */
+  const reveals = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  reveals.forEach(el => revealObserver.observe(el));
+
+  /* --- FILTRES DE LA GALERIE --- */
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const galleryItems = document.querySelectorAll('.gallery-item');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filterValue = btn.getAttribute('data-filter');
+
+      galleryItems.forEach(item => {
+        if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+          item.style.display = 'block';
+          setTimeout(() => item.style.opacity = '1', 50);
+        } else {
+          item.style.opacity = '0';
+          setTimeout(() => item.style.display = 'none', 300);
+        }
+      });
+    });
+  });
+
+  /* --- LIGHTBOX AVEC SYSTEME PREV/NEXT --- */
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const closeBtn = document.getElementById('lightbox-close-btn');
+  const prevBtn = document.getElementById('lightbox-prev-btn');
+  const nextBtn = document.getElementById('lightbox-next-btn');
+  
+  let currentImages = [];
+  let currentIndex = 0;
+
+  // Initialisation de la lightbox pour chaque image
+  galleryItems.forEach(item => {
+    item.addEventListener('click', () => {
+      // Filtrer les images actuellement visibles dans la galerie
+      const activeItems = Array.from(galleryItems).filter(i => i.style.display !== 'none');
+      currentImages = activeItems.map(i => i.querySelector('img').src);
+      
+      const clickedSrc = item.querySelector('img').src;
+      currentIndex = currentImages.indexOf(clickedSrc);
+
+      openLightbox(clickedSrc);
+    });
+  });
+
+  function openLightbox(src) {
+    lightboxImg.src = src;
+    lightbox.classList.add('open');
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+  }
+
+  function showNextImage() {
+    currentIndex = (currentIndex + 1) % currentImages.length;
+    lightboxImg.src = currentImages[currentIndex];
+  }
+
+  function showPrevImage() {
+    currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+    lightboxImg.src = currentImages[currentIndex];
+  }
+
+  closeBtn.addEventListener('click', closeLightbox);
+  nextBtn.addEventListener('click', (e) => { e.stopPropagation(); showNextImage(); });
+  prevBtn.addEventListener('click', (e) => { e.stopPropagation(); showPrevImage(); });
+  
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  // Support des touches clavier
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') showNextImage();
+    if (e.key === 'ArrowLeft') showPrevImage();
+  });
+
+  /* --- CALCULATEUR DE BUDGET INTERACTIF --- */
+  const eventTypeSelect = document.getElementById('event-type');
+  const guestCountInput = document.getElementById('guest-count');
+  const guestLabel = document.getElementById('guest-label');
+  const calcPriceDiv = document.getElementById('calc-price');
+
+  const optSon = document.getElementById('opt-son');
+  const optLight = document.getElementById('opt-light');
+  const optDeco = document.getElementById('opt-deco');
+  const optVideo = document.getElementById('opt-video');
+
+  function calculateBudget() {
+    const guests = parseInt(guestCountInput.value);
+    guestLabel.textContent = `Nombre d'Invités : ${guests}`;
+
+    // Base tarifaire selon l'événement
+    let base = 1000;
+    let costPerGuest = 5;
+
+    if (eventTypeSelect.value === 'mariage') {
+      base = 2500;
+      costPerGuest = 12; // Repas hors traiteur principal
+    } else if (eventTypeSelect.value === 'corporate') {
+      base = 3000;
+      costPerGuest = 15;
+    }
+
+    let total = base + (guests * costPerGuest);
+
+    // Options complémentaires
+    if (optSon.checked) total += 800;
+    if (optLight.checked) total += 600;
+    if (optDeco.checked) total += 1200;
+    if (optVideo.checked) total += 1500;
+
+    // Formatage du prix
+    calcPriceDiv.textContent = total.toLocaleString('fr-FR') + ' €';
+  }
+
+  [eventTypeSelect, guestCountInput, optSon, optLight, optDeco, optVideo].forEach(el => {
+    el.addEventListener('change', calculateBudget);
+    el.addEventListener('input', calculateBudget);
+  });
+
+  function applyToContact() {
+    const typeText = eventTypeSelect.options[eventTypeSelect.selectedIndex].text;
+    const guests = guestCountInput.value;
+    const priceText = calcPriceDiv.textContent;
+
+    const textarea = document.getElementById('form-message');
+    textarea.value = `Bonjour Nour to Sunset,\n\nJe souhaiterais obtenir des informations concernant notre projet :\n- Type d'événement : ${typeText}\n- Estimation invités : ${guests} personnes.\n- Budget estimé via votre outil : ${priceText}.\n\nMerci de me recontacter !`;
+    
+    // Défilement automatique vers le formulaire
+    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  /* --- LIVRE D'OR / CAROUSEL DE TEMOIGNAGES --- */
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.testimonial-slide');
+  const dots = document.querySelectorAll('#carousel-dots .dot');
+
+  function setSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+
+    currentSlide = index;
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+  }
+
+  // Changement automatique toutes les 5 secondes
+  setInterval(() => {
+    let next = (currentSlide + 1) % slides.length;
+    setSlide(next);
+  }, 5000);
+
+  /* --- ENVOI DU FORMULAIRE DE CONTACT (ETAT VISUEL HAUTE QUALITÉ) --- */
+  function handleContactSubmit() {
+    const btn = document.getElementById('submit-btn');
+    const notif = document.getElementById('form-notif');
+    const form = document.getElementById('contactForm');
+
+    btn.disabled = true;
+    btn.textContent = 'Envoi en cours...';
+
+    // Simulation de l'envoi d'API
+    setTimeout(() => {
+      btn.textContent = '✓ Message envoyé !';
+      btn.style.backgroundColor = '#2e7d32';
+      
+      notif.className = "form-notification success";
+      notif.textContent = "Merci pour votre demande ! Notre équipe à Agadir étudiera votre projet et prendra contact avec vous d'ici 24h.";
+      
+      form.reset();
+      
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.textContent = 'Envoyer ma Demande';
+        btn.style.backgroundColor = '';
+      }, 5000);
+      
+    }, 1500);
+  }
+</script>
+
+</body>
+</html>
